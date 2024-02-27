@@ -1,0 +1,291 @@
+<xsd:schema xmlns:xsd='http://www.w3.org/2001/XMLSchema' 
+     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
+     xmlns:xdb='http://xmlns.oracle.com/xdb'>
+<xsd:complexType name='SA_HEADER_OUTType'>                                       
+        <xsd:sequence>                                                           
+                <xsd:element name='CORR_ID' minOccurs='0'>                                     
+                        <xsd:simpleType>                                         
+                                <xsd:restriction base='xsd:string'>              
+                                        <xsd:maxLength value='128'/>             
+                                </xsd:restriction>                               
+                        </xsd:simpleType>                                        
+                </xsd:element>                                                   
+                <xsd:element name='USER_NAME'>                                   
+                        <xsd:simpleType>                                         
+                                <xsd:restriction base='xsd:string'>              
+                                        <xsd:maxLength value='50'/>              
+                                </xsd:restriction>                               
+                        </xsd:simpleType>                                        
+                </xsd:element>                                                   
+                <xsd:element name='APPLICATION'>                                 
+                        <xsd:simpleType>                                         
+                                <xsd:restriction base='xsd:string'>              
+                                        <xsd:maxLength value='50'/>              
+                                </xsd:restriction>                               
+                        </xsd:simpleType>                                        
+                </xsd:element>                                                   
+                <xsd:element name='MSG_ID' minOccurs='0'>                                      
+                        <xsd:simpleType>                                         
+                                <xsd:restriction base='xsd:string'>              
+                                        <xsd:maxLength value='128'/>             
+                                </xsd:restriction>                               
+                        </xsd:simpleType>                                        
+                </xsd:element>                                                   
+                <xsd:element name='RESULT_CODE' type='xsd:double'/>              
+                <xsd:element name='STATUS_CODE' type='xsd:double'/>              
+                <xsd:element name='ERRORS' type='SA_ERRORSType' minOccurs='0'/>  
+        </xsd:sequence>                                                          
+</xsd:complexType>                                                               
+<xsd:element name='SYM_FT_FUNDS_HELD_OUT'  type='SYM_FT_FUNDS_HELD_OUTType'/>
+<xsd:complexType name='SYM_FT_FUNDS_HELD_OUTType'>
+<xsd:sequence>
+<xsd:element name='HEADER_OUT' type='SA_HEADER_OUTType'/>
+<xsd:element name='ACCT_NO'  minOccurs='0'>
+<xsd:simpleType>                             
+        <xsd:restriction base='xsd:string'>  
+                <xsd:maxLength value='20'/> 
+        </xsd:restriction>                   
+</xsd:simpleType>                            
+</xsd:element>
+<xsd:element name='START_DATE'  minOccurs='0' >
+<xsd:simpleType>                             
+        <xsd:restriction base='xsd:string'>  
+                <xsd:maxLength value='19'/> 
+        </xsd:restriction>                   
+</xsd:simpleType>                            
+</xsd:element>
+<xsd:element name='END_DATE'  minOccurs='0' >
+<xsd:simpleType>                             
+        <xsd:restriction base='xsd:string'>  
+                <xsd:maxLength value='19'/> 
+        </xsd:restriction>                   
+</xsd:simpleType>                            
+</xsd:element>
+<xsd:element name='RESTRAINT_TYPE'  minOccurs='0'>
+<xsd:simpleType>                             
+        <xsd:restriction base='xsd:string'>  
+                <xsd:maxLength value='3'/> 
+        </xsd:restriction>                   
+</xsd:simpleType>                            
+</xsd:element>
+<xsd:element name='PLEDGED_AMT'  type='xsd:double' minOccurs='0' />
+<xsd:element name='CCY'  minOccurs='0'>
+<xsd:simpleType>                             
+        <xsd:restriction base='xsd:string'>  
+                <xsd:maxLength value='3'/> 
+        </xsd:restriction>                   
+</xsd:simpleType>                            
+</xsd:element>
+<xsd:element name='NARRATIVE'  minOccurs='0'>
+<xsd:simpleType>                             
+        <xsd:restriction base='xsd:string'>  
+                <xsd:maxLength value='240'/> 
+        </xsd:restriction>                   
+</xsd:simpleType>                            
+</xsd:element>
+<xsd:element name='FORCE_FUNDS_HELD'  minOccurs='0'>
+<xsd:simpleType>                             
+        <xsd:restriction base='xsd:string'>  
+                <xsd:maxLength value='1'/> 
+        </xsd:restriction>                   
+</xsd:simpleType>                            
+</xsd:element>
+<xsd:element name='REFERENCE_NO'  minOccurs='0'>
+<xsd:simpleType>                             
+        <xsd:restriction base='xsd:string'>  
+                <xsd:maxLength value='13'/> 
+        </xsd:restriction>                   
+</xsd:simpleType>                            
+</xsd:element>
+<xsd:element name='SOURCE_MODULE'  minOccurs='0'>
+<xsd:simpleType>                             
+        <xsd:restriction base='xsd:string'>  
+                <xsd:maxLength value='2'/> 
+        </xsd:restriction>                   
+</xsd:simpleType>                            
+</xsd:element>
+<xsd:element name='LAST_CHANGE_OFFICER'  minOccurs='0'>
+<xsd:simpleType>                             
+        <xsd:restriction base='xsd:string'>  
+                <xsd:maxLength value='30'/> 
+        </xsd:restriction>                   
+</xsd:simpleType>                            
+</xsd:element>
+<xsd:element name='FH_OPERATION'  minOccurs='0'>
+<xsd:simpleType>                             
+        <xsd:restriction base='xsd:string'>  
+                <xsd:maxLength value='1'/> 
+        </xsd:restriction>                   
+</xsd:simpleType>                            
+</xsd:element>
+<xsd:element name='FH_SEQ_NO'  type='xsd:double' minOccurs='0' />
+<xsd:element name='STATUS'  minOccurs='0'>
+<xsd:simpleType>                             
+        <xsd:restriction base='xsd:string'>  
+                <xsd:maxLength value='1'/> 
+        </xsd:restriction>                   
+</xsd:simpleType>                            
+</xsd:element>
+<xsd:element name='FT_FH_CREDIT_ACCT_OUT'  type='FT_FH_CREDIT_ACCT_COLL_OUTType'
+ minOccurs='0' maxOccurs= '1'/>
+</xsd:sequence>
+</xsd:complexType> 
+<xsd:complexType name='FT_FH_CREDIT_ACCT_T_OUTType'>
+<xsd:sequence>
+<xsd:element name='POSITION'  type='xsd:double' minOccurs='0' />
+<xsd:element name='ACCT_NO'  minOccurs='0'>
+<xsd:simpleType>                             
+        <xsd:restriction base='xsd:string'>  
+                <xsd:maxLength value='20'/> 
+        </xsd:restriction>                   
+</xsd:simpleType>                            
+</xsd:element>
+<xsd:element name='ERROR_MESSAGE'  minOccurs='0'>
+<xsd:simpleType>                             
+        <xsd:restriction base='xsd:string'>  
+                <xsd:maxLength value='255'/> 
+        </xsd:restriction>                   
+</xsd:simpleType>                            
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType> 
+<xsd:complexType name='SA_ERRORSType'>                                                                   
+        <xsd:sequence>                                                                                   
+                <xsd:element name='ERRORS' type='SA_ERRLISTType' minOccurs='0'/>                         
+                <xsd:element name='BUGS' type='SA_BUGLISTType' minOccurs='0'/>                           
+        </xsd:sequence>                                                                                  
+</xsd:complexType>                                                                                       
+<xsd:complexType name='SA_ERRLISTType'>                                                                  
+        <xsd:sequence>                                                                                   
+                <xsd:element name='SA_ERR' type='SA_ERRType' minOccurs='0' maxOccurs='unbounded'/>       
+        </xsd:sequence>                                                                                  
+</xsd:complexType>                                                                                       
+<xsd:complexType name='SA_BUGLISTType'>                                                                  
+        <xsd:sequence>                                                                                   
+                <xsd:element name='SA_BUG' type='SA_BUGType' minOccurs='0' maxOccurs='unbounded'/>       
+        </xsd:sequence>                                                                                  
+</xsd:complexType>                                                                                       
+<xsd:complexType name='SA_ERRType'>                                                                      
+        <xsd:sequence>                                                                                   
+                <xsd:element name='ERROR_NO' type='xsd:double' minOccurs='0'/>                           
+                <xsd:element name='ERROR_MSG' minOccurs='0'>                                             
+                        <xsd:simpleType>                                                                 
+                                <xsd:restriction base='xsd:string'>                                      
+                                        <xsd:maxLength value='4000'/>                                    
+                                </xsd:restriction>                                                       
+                        </xsd:simpleType>                                                                
+                </xsd:element>                                                                           
+                <xsd:element name='SEVERITY' minOccurs='0'>                                              
+                        <xsd:simpleType>                                                                 
+                                <xsd:restriction base='xsd:string'>                                      
+                                        <xsd:maxLength value='1'/>                                       
+                                </xsd:restriction>                                                       
+                        </xsd:simpleType>                                                                
+                </xsd:element>                                                                           
+                <xsd:element name='ATTR_NAME' minOccurs='0'>                                             
+                        <xsd:simpleType>                                                                 
+                                <xsd:restriction base='xsd:string'>                                      
+                                        <xsd:maxLength value='100'/>                                     
+                                </xsd:restriction>                                                       
+                        </xsd:simpleType>                                                                
+                </xsd:element>                                                                           
+                <xsd:element name='POSITION_NO' type='xsd:double' minOccurs='0'/>                        
+        </xsd:sequence>                                                                                  
+</xsd:complexType>                                                                                       
+<xsd:complexType name='SA_BUGType'>                                                                      
+        <xsd:sequence>                                                                                   
+                <xsd:element name='ERROR_NO' type='xsd:double' minOccurs='1'/>                           
+                <xsd:element name='ERROR_MSG' minOccurs='1'>                                             
+                        <xsd:simpleType>                                                                 
+                                <xsd:restriction base='xsd:string'>                                      
+                                        <xsd:maxLength value='4000'/>                                    
+                                </xsd:restriction>                                                       
+                        </xsd:simpleType>                                                                
+                </xsd:element>                                                                           
+                <xsd:element name='ERROR_DATE' minOccurs='0'>                                            
+                        <xsd:simpleType>                                                                 
+                                <xsd:restriction base='xsd:string'>                                      
+                                        <xsd:maxLength value='25'/>                                      
+                                </xsd:restriction>                                                       
+                        </xsd:simpleType>                                                                
+                </xsd:element>                                                                           
+                <xsd:element name='PROCESS_NAME' minOccurs='0'>                                          
+                        <xsd:simpleType>                                                                 
+                                <xsd:restriction base='xsd:string'>                                      
+                                        <xsd:maxLength value='100'/>                                     
+                                </xsd:restriction>                                                       
+                        </xsd:simpleType>                                                                
+                </xsd:element>                                                                           
+                <xsd:element name='OSUSER' minOccurs='0'>                                                
+                        <xsd:simpleType>                                                                 
+                                <xsd:restriction base='xsd:string'>                                      
+                                        <xsd:maxLength value='30'/>                                      
+                                </xsd:restriction>                                                       
+                        </xsd:simpleType>                                                                
+                </xsd:element>                                                                           
+                <xsd:element name='AUDSID' type='xsd:double' minOccurs='0'/>                             
+                <xsd:element name='RUN_DATE' minOccurs='0'>                                              
+                        <xsd:simpleType>                                                                 
+                                <xsd:restriction base='xsd:string'>                                      
+                                        <xsd:maxLength value='25'/>                                      
+                                </xsd:restriction>                                                       
+                        </xsd:simpleType>                                                                
+                </xsd:element>                                                                           
+                <xsd:element name='MODULE' minOccurs='0'>                                                
+                        <xsd:simpleType>                                                                 
+                                <xsd:restriction base='xsd:string'>                                      
+                                        <xsd:maxLength value='48'/>                                      
+                                </xsd:restriction>                                                       
+                        </xsd:simpleType>                                                                
+                </xsd:element>                                                                           
+                <xsd:element name='ACTION' minOccurs='0'>                                                
+                        <xsd:simpleType>                                                                 
+                                <xsd:restriction base='xsd:string'>                                      
+                                        <xsd:maxLength value='32'/>                                      
+                                </xsd:restriction>                                                       
+                        </xsd:simpleType>                                                                
+                </xsd:element>                                                                           
+                <xsd:element name='CLIENT_INFO' minOccurs='0'>                                           
+                        <xsd:simpleType>                                                                 
+                                <xsd:restriction base='xsd:string'>                                      
+                                        <xsd:maxLength value='64'/>                                      
+                                </xsd:restriction>                                                       
+                        </xsd:simpleType>                                                                
+                </xsd:element>                                                                           
+                <xsd:element name='SYSTEM_PHASE' minOccurs='0'>                                          
+                        <xsd:simpleType>                                                                 
+                                <xsd:restriction base='xsd:string'>                                      
+                                        <xsd:maxLength value='3'/>                                       
+                                </xsd:restriction>                                                       
+                        </xsd:simpleType>                                                                
+                </xsd:element>                                                                           
+                <xsd:element name='DEBUG_INFO' type='xsd:string' minOccurs='0'/>                         
+                <xsd:element name='CALL_STACK' minOccurs='0'>                                            
+                        <xsd:simpleType>                                                                 
+                                <xsd:restriction base='xsd:string'>                                      
+                                        <xsd:maxLength value='4000'/>                                    
+                                </xsd:restriction>                                                       
+                        </xsd:simpleType>                                                                
+                </xsd:element>                                                                           
+                <xsd:element name='ERROR_STACK' minOccurs='0'>                                           
+                        <xsd:simpleType>                                                                 
+                                <xsd:restriction base='xsd:string'>                                      
+                                        <xsd:maxLength value='4000'/>                                    
+                                </xsd:restriction>                                                       
+                        </xsd:simpleType>                                                                
+                </xsd:element>                                                                           
+        </xsd:sequence>                                                                                  
+</xsd:complexType>                                                                                       
+<xsd:complexType name='FT_FH_CREDIT_ACCT_COLL_OUTType' >
+<xsd:sequence>
+<xsd:element name='FT_FH_CREDIT_ACCT_T_OUT' type='FT_FH_CREDIT_ACCT_T_OUTType'  minOccurs='0' maxOccurs='unbounded'/>
+</xsd:sequence> 
+</xsd:complexType>
+ <xsd:element name='SYM_STD_OUT' type='SYM_STD_OUTType'/>                                        
+         <xsd:complexType name='SYM_STD_OUTType'>                                                
+                 <xsd:sequence>                                                                  
+                         <xsd:element name='HEADER_OUT' type='SA_HEADER_OUTType' minOccurs='0'/> 
+                 </xsd:sequence>                                                                 
+         </xsd:complexType>                                                                      
+</xsd:schema>
+
